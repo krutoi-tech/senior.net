@@ -28,9 +28,27 @@ body::before {
     background: 
         radial-gradient(circle at 20% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(80, 200, 120, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 60%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 40% 60%, rgba(255, 107, 107, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 60% 30%, rgba(255, 217, 61, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.05) 0%, transparent 50%);
     z-index: -2;
-    animation: backgroundShift 30s ease-in-out infinite;
+    animation: backgroundShift 30s ease-in-out infinite, backgroundFloat 60s ease-in-out infinite;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(45deg, transparent 40%, rgba(74, 144, 226, 0.02) 50%, transparent 60%),
+        linear-gradient(135deg, transparent 40%, rgba(80, 200, 120, 0.02) 50%, transparent 60%),
+        linear-gradient(225deg, transparent 40%, rgba(255, 107, 107, 0.02) 50%, transparent 60%),
+        linear-gradient(315deg, transparent 40%, rgba(255, 217, 61, 0.02) 50%, transparent 60%);
+    z-index: -3;
+    animation: overlayShift 45s ease-in-out infinite;
 }
 
 .background-effects {
@@ -57,6 +75,7 @@ body::before {
     left: 10%;
     animation-delay: 0s;
     background: linear-gradient(45deg, rgba(74, 144, 226, 0.15), rgba(80, 200, 120, 0.1));
+    animation: float 25s infinite ease-in-out, colorShift 15s ease-in-out infinite;
 }
 
 .circle-2 {
@@ -66,6 +85,7 @@ body::before {
     right: 15%;
     animation-delay: -7s;
     background: linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(255, 217, 61, 0.1));
+    animation: float 18s infinite ease-in-out reverse, colorShift 12s ease-in-out infinite;
 }
 
 .circle-3 {
@@ -75,6 +95,7 @@ body::before {
     left: 20%;
     animation-delay: -14s;
     background: linear-gradient(45deg, rgba(80, 200, 120, 0.12), rgba(74, 144, 226, 0.08));
+    animation: float 22s infinite ease-in-out, colorShift 18s ease-in-out infinite;
 }
 
 .circle-4 {
@@ -85,6 +106,7 @@ body::before {
     animation-delay: -5s;
     background: linear-gradient(45deg, rgba(138, 43, 226, 0.1), rgba(75, 0, 130, 0.1));
     display: none;
+    animation: float 28s infinite ease-in-out, colorShift 20s ease-in-out infinite;
 }
 
 .circle-5 {
@@ -95,6 +117,7 @@ body::before {
     animation-delay: -12s;
     background: linear-gradient(45deg, rgba(255, 20, 147, 0.1), rgba(255, 105, 180, 0.1));
     display: none;
+    animation: float 16s infinite ease-in-out, colorShift 10s ease-in-out infinite;
 }
 
 .circle-6 {
@@ -105,6 +128,7 @@ body::before {
     animation-delay: -8s;
     background: linear-gradient(45deg, rgba(255, 165, 0, 0.08), rgba(255, 69, 0, 0.08));
     display: none;
+    animation: float 24s infinite ease-in-out, colorShift 14s ease-in-out infinite;
 }
 
 .circle-7 {
@@ -115,6 +139,7 @@ body::before {
     animation-delay: -18s;
     background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(0, 191, 255, 0.1));
     display: none;
+    animation: float 20s infinite ease-in-out, colorShift 16s ease-in-out infinite;
 }
 
 .circle-8 {
@@ -125,6 +150,7 @@ body::before {
     animation-delay: -3s;
     background: linear-gradient(45deg, rgba(255, 0, 255, 0.08), rgba(255, 20, 147, 0.08));
     display: none;
+    animation: float 26s infinite ease-in-out, colorShift 22s ease-in-out infinite;
 }
 
 .circle-9 {
@@ -135,6 +161,7 @@ body::before {
     animation-delay: -16s;
     background: linear-gradient(45deg, rgba(255, 215, 0, 0.08), rgba(255, 193, 7, 0.08));
     display: none;
+    animation: float 19s infinite ease-in-out, colorShift 13s ease-in-out infinite;
 }
 
 .circle-10 {
@@ -145,6 +172,62 @@ body::before {
     animation-delay: -20s;
     background: linear-gradient(45deg, rgba(128, 0, 128, 0.1), rgba(147, 112, 219, 0.1));
     display: none;
+    animation: float 17s infinite ease-in-out, colorShift 11s ease-in-out infinite;
+}
+
+.circle-11 {
+    width: 140px;
+    height: 140px;
+    top: 45%;
+    left: 15%;
+    animation-delay: -6s;
+    background: linear-gradient(45deg, rgba(0, 128, 128, 0.08), rgba(64, 224, 208, 0.08));
+    display: none;
+    animation: float 21s infinite ease-in-out, colorShift 17s ease-in-out infinite;
+}
+
+.circle-12 {
+    width: 110px;
+    height: 110px;
+    bottom: 25%;
+    left: 60%;
+    animation-delay: -22s;
+    background: linear-gradient(45deg, rgba(220, 20, 60, 0.1), rgba(255, 99, 71, 0.1));
+    display: none;
+    animation: float 23s infinite ease-in-out, colorShift 19s ease-in-out infinite;
+}
+
+.circle-13 {
+    width: 95px;
+    height: 95px;
+    top: 80%;
+    right: 35%;
+    animation-delay: -9s;
+    background: linear-gradient(45deg, rgba(75, 0, 130, 0.1), rgba(138, 43, 226, 0.08));
+    display: none;
+    animation: float 15s infinite ease-in-out, colorShift 9s ease-in-out infinite;
+}
+
+.circle-14 {
+    width: 170px;
+    height: 170px;
+    top: 5%;
+    left: 35%;
+    animation-delay: -4s;
+    background: linear-gradient(45deg, rgba(255, 140, 0, 0.09), rgba(255, 69, 0, 0.09));
+    display: none;
+    animation: float 29s infinite ease-in-out, colorShift 21s ease-in-out infinite;
+}
+
+.circle-15 {
+    width: 85px;
+    height: 85px;
+    bottom: 15%;
+    right: 65%;
+    animation-delay: -11s;
+    background: linear-gradient(45deg, rgba(50, 205, 50, 0.1), rgba(34, 139, 34, 0.08));
+    display: none;
+    animation: float 14s infinite ease-in-out, colorShift 8s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -162,15 +245,52 @@ body::before {
     }
 }
 
+@keyframes colorShift {
+    0%, 100% {
+        filter: hue-rotate(0deg) brightness(1);
+    }
+    33% {
+        filter: hue-rotate(120deg) brightness(1.1);
+    }
+    66% {
+        filter: hue-rotate(240deg) brightness(0.9);
+    }
+}
+
 @keyframes backgroundShift {
     0%, 100% {
         transform: translateX(0) translateY(0);
     }
-    33% {
+    25% {
         transform: translateX(-20px) translateY(-10px);
     }
-    66% {
+    50% {
         transform: translateX(10px) translateY(15px);
+    }
+    75% {
+        transform: translateX(-15px) translateY(-5px);
+    }
+}
+
+@keyframes backgroundFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(30px, -20px) scale(1.05);
+        opacity: 1;
+    }
+}
+
+@keyframes overlayShift {
+    0%, 100% {
+        transform: translateX(-100%) translateY(-50%) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateX(100%) translateY(50%) rotate(180deg);
+        opacity: 0.6;
     }
 }
 
@@ -180,6 +300,30 @@ body::before {
     padding: 20px;
     position: relative;
     z-index: 1;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(90deg, transparent 0%, rgba(74, 144, 226, 0.02) 50%, transparent 100%),
+        linear-gradient(180deg, transparent 0%, rgba(80, 200, 120, 0.02) 50%, transparent 100%);
+    pointer-events: none;
+    z-index: -1;
+    animation: containerGlow 25s ease-in-out infinite;
+}
+
+@keyframes containerGlow {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
 }
 
 .language-switcher {
@@ -197,9 +341,10 @@ body::before {
     border-radius: 25px;
     padding: 8px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(74, 144, 226, 0.2);
     position: relative;
     overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .language-toggle::before {
@@ -214,8 +359,32 @@ body::before {
     transition: opacity 0.3s ease;
 }
 
+.language-toggle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
 .language-toggle:hover::before {
     opacity: 1;
+}
+
+.language-toggle:hover::after {
+    width: 200px;
+    height: 200px;
+}
+
+.language-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(74, 144, 226, 0.3);
 }
 
 .language-option {
@@ -238,8 +407,8 @@ body::before {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #4a90e2, #50c878);
-    transition: left 0.3s ease;
+    background: linear-gradient(45deg, #4a90e2, #50c878, #ff6b6b);
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: -1;
 }
 
@@ -253,7 +422,7 @@ body::before {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .language-option.active {
@@ -271,7 +440,7 @@ body::before {
 
 .language-option:hover {
     color: white;
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.05);
 }
 
 .language-option:hover::after {
@@ -299,7 +468,7 @@ body::before {
     font-weight: 600;
     font-size: 1rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 25px rgba(0, 136, 204, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 136, 204, 0.3), 0 0 20px rgba(0, 136, 204, 0.2);
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
@@ -324,10 +493,10 @@ body::before {
     left: 50%;
     width: 0;
     height: 0;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
     transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .channel-btn:hover::before {
@@ -341,7 +510,7 @@ body::before {
 
 .channel-btn:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 15px 35px rgba(0, 136, 204, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 136, 204, 0.4), 0 0 30px rgba(0, 136, 204, 0.3);
 }
 
 .channel-btn:active {
@@ -350,7 +519,7 @@ body::before {
 
 .channel-btn i {
     font-size: 1.2rem;
-    animation: pulse 2s infinite;
+    animation: pulse 2s infinite, rotate 8s linear infinite;
 }
 
 .header {
@@ -367,9 +536,42 @@ body::before {
     left: 50%;
     width: 200px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #4a90e2, #50c878, transparent);
+    background: linear-gradient(90deg, transparent, #4a90e2, #50c878, #ff6b6b, transparent);
     transform: translateX(-50%);
-    animation: headerGlow 3s ease-in-out infinite;
+    animation: headerGlow 3s ease-in-out infinite, headerShimmer 4s ease-in-out infinite;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(45deg, #4a90e2, #50c878);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: headerPulse 2s ease-in-out infinite;
+}
+
+@keyframes headerPulse {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateX(-50%) scale(1.5);
+        opacity: 1;
+    }
+}
+
+@keyframes headerShimmer {
+    0%, 100% {
+        background-position: -200% 0;
+    }
+    50% {
+        background-position: 200% 0;
+    }
 }
 
 .logo {
@@ -409,11 +611,11 @@ body::before {
 
 .logo i {
     font-size: 3rem;
-    background: linear-gradient(45deg, #4a90e2, #50c878, #ff6b6b);
+    background: linear-gradient(45deg, #4a90e2, #50c878, #ff6b6b, #ffd93d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: pulse 2s infinite, rotate 10s linear infinite;
+    animation: pulse 2s infinite, rotate 10s linear infinite, shimmer 3s ease-in-out infinite;
     position: relative;
     z-index: 1;
     filter: drop-shadow(0 4px 8px rgba(74, 144, 226, 0.3));
@@ -422,15 +624,25 @@ body::before {
 .logo h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    background: linear-gradient(45deg, #4a90e2, #50c878, #ff6b6b, #ffd93d);
+    background: linear-gradient(45deg, #4a90e2, #50c878, #ff6b6b, #ffd93d, #4a90e2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-shadow: 0 4px 20px rgba(74, 144, 226, 0.3);
     position: relative;
     z-index: 1;
-    animation: shimmer 3s ease-in-out infinite;
+    animation: shimmer 3s ease-in-out infinite, textGlow 4s ease-in-out infinite;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+    background-size: 300% 300%;
+}
+
+@keyframes textGlow {
+    0%, 100% {
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+    }
+    50% {
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7));
+    }
 }
 
 .tagline {
@@ -450,9 +662,33 @@ body::before {
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #4a90e2, #50c878);
+    background: linear-gradient(90deg, #4a90e2, #50c878, #ff6b6b);
     transform: translateX(-50%);
     animation: expandLine 2s ease-out 2s both;
+}
+
+.tagline::before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #50c878;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateX(-50%) scale(1.5);
+        opacity: 1;
+    }
 }
 
 .main-content {
@@ -471,10 +707,10 @@ body::before {
     border-radius: 20px;
     padding: 40px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(74, 144, 226, 0.1);
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .info-card::before {
@@ -484,7 +720,8 @@ body::before {
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, #4a90e2, #50c878, #ff6b6b);
+    background: linear-gradient(90deg, #4a90e2, #50c878, #ff6b6b, #ffd93d);
+    animation: borderFlow 3s ease-in-out infinite;
 }
 
 .info-card::after {
@@ -499,13 +736,23 @@ body::before {
 }
 
 .info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(74, 144, 226, 0.2);
 }
 
 .info-card:hover::before {
-    height: 3px;
-    background: linear-gradient(90deg, #4a90e2, #50c878, #ff6b6b, #ffd93d);
+    height: 4px;
+    background: linear-gradient(90deg, #4a90e2, #50c878, #ff6b6b, #ffd93d, #4a90e2);
+    animation-duration: 2s;
+}
+
+@keyframes borderFlow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .info-card h2 {
@@ -526,6 +773,7 @@ body::before {
     background: linear-gradient(45deg, #4a90e2, #50c878);
     transform: translateY(-50%);
     border-radius: 2px;
+    animation: iconGlow 2s ease-in-out infinite alternate;
 }
 
 .info-card h2::after {
@@ -537,6 +785,25 @@ body::before {
     height: 2px;
     background: linear-gradient(45deg, #50c878, #4a90e2);
     border-radius: 1px;
+    animation: lineFlow 3s ease-in-out infinite;
+}
+
+@keyframes iconGlow {
+    0% {
+        filter: brightness(1);
+    }
+    100% {
+        filter: brightness(1.5);
+    }
+}
+
+@keyframes lineFlow {
+    0%, 100% {
+        width: 50px;
+    }
+    50% {
+        width: 80px;
+    }
 }
 
 .description {
@@ -556,7 +823,7 @@ body::before {
     color: #50c878;
     margin-right: 10px;
     font-size: 1.1rem;
-    animation: bounce 2s infinite;
+    animation: bounce 2s infinite, iconGlow 3s ease-in-out infinite alternate;
     filter: drop-shadow(0 2px 4px rgba(80, 200, 120, 0.3));
 }
 
@@ -567,6 +834,7 @@ body::before {
 .description i.fa-exclamation-triangle {
     animation-delay: 0.5s;
     color: #ff6b6b;
+    filter: drop-shadow(0 2px 4px rgba(255, 107, 107, 0.3));
 }
 
 .team-section {
@@ -592,6 +860,7 @@ body::before {
     background: linear-gradient(90deg, #4a90e2, #50c878);
     transform: translateX(-50%);
     border-radius: 2px;
+    animation: lineExpand 2s ease-out 1s both;
 }
 
 .team-section h2::after {
@@ -604,6 +873,27 @@ body::before {
     background: #50c878;
     transform: translateX(-50%) rotate(45deg);
     border-radius: 2px;
+    animation: diamondPulse 2s ease-in-out infinite;
+}
+
+@keyframes lineExpand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80px;
+    }
+}
+
+@keyframes diamondPulse {
+    0%, 100% {
+        transform: translateX(-50%) rotate(45deg) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateX(-50%) rotate(45deg) scale(1.2);
+        opacity: 1;
+    }
 }
 
 .team-grid {
@@ -620,7 +910,7 @@ body::before {
     padding: 35px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(74, 144, 226, 0.1);
     position: relative;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
@@ -634,7 +924,7 @@ body::before {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 0.5s ease;
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .member-card::after {
@@ -646,7 +936,7 @@ body::before {
     bottom: 0;
     background: radial-gradient(circle at center, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
 }
 
@@ -660,7 +950,7 @@ body::before {
 
 .member-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(74, 144, 226, 0.2);
 }
 
 .member-card.owner {
@@ -672,6 +962,10 @@ body::before {
     background: radial-gradient(circle at center, rgba(255, 107, 107, 0.15) 0%, transparent 70%);
 }
 
+.member-card.owner:hover {
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 107, 107, 0.2);
+}
+
 .member-card.co-owner {
     background: rgba(80, 200, 120, 0.1);
     border-color: rgba(80, 200, 120, 0.3);
@@ -679,6 +973,10 @@ body::before {
 
 .member-card.co-owner::after {
     background: radial-gradient(circle at center, rgba(80, 200, 120, 0.15) 0%, transparent 70%);
+}
+
+.member-card.co-owner:hover {
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(80, 200, 120, 0.2);
 }
 
 .member-card:nth-child(1) {
@@ -728,8 +1026,17 @@ body::before {
     background-clip: text;
     position: relative;
     z-index: 1;
-    animation: bounce 2s infinite;
+    animation: bounce 2s infinite, rotate 8s linear infinite, iconShine 4s ease-in-out infinite;
     filter: drop-shadow(0 4px 8px rgba(74, 144, 226, 0.3));
+}
+
+@keyframes iconShine {
+    0%, 100% {
+        filter: drop-shadow(0 4px 8px rgba(74, 144, 226, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 6px 12px rgba(74, 144, 226, 0.5));
+    }
 }
 
 .member-card.owner .member-icon i {
@@ -766,6 +1073,16 @@ body::before {
     background: linear-gradient(45deg, #4a90e2, #50c878);
     transform: translateX(-50%);
     border-radius: 1px;
+    animation: titleUnderline 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleUnderline {
+    0% {
+        width: 30px;
+    }
+    100% {
+        width: 60px;
+    }
 }
 
 .username {
@@ -792,7 +1109,7 @@ body::before {
     height: 1px;
     background: linear-gradient(45deg, rgba(74, 144, 226, 0.3), rgba(80, 200, 120, 0.3));
     transform: scaleX(0);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .username:hover::after {
@@ -812,7 +1129,7 @@ body::before {
     padding: 15px 20px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
@@ -827,7 +1144,7 @@ body::before {
     height: 100%;
     background: linear-gradient(45deg, #50c878, #4a90e2);
     transform: scaleY(0);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .co-owner-item::after {
@@ -840,12 +1157,12 @@ body::before {
     background: radial-gradient(circle, rgba(80, 200, 120, 0.1) 0%, transparent 70%);
     border-radius: 0 15px 0 50px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .co-owner-item:hover {
     background: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
+    transform: translateX(5px) scale(1.02);
 }
 
 .co-owner-item:hover::before {
@@ -875,7 +1192,7 @@ body::before {
     border-radius: 50px;
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 25px rgba(0, 136, 204, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 136, 204, 0.3), 0 0 20px rgba(0, 136, 204, 0.2);
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -889,7 +1206,7 @@ body::before {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .telegram-btn::after {
@@ -899,10 +1216,10 @@ body::before {
     left: 50%;
     width: 0;
     height: 0;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
     transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .telegram-btn:hover::before {
@@ -916,7 +1233,7 @@ body::before {
 
 .telegram-btn:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 15px 35px rgba(0, 136, 204, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 136, 204, 0.4), 0 0 30px rgba(0, 136, 204, 0.3);
 }
 
 .telegram-btn:active {
@@ -930,7 +1247,7 @@ body::before {
 }
 
 .telegram-btn i {
-    animation: pulse 2s infinite;
+    animation: pulse 2s infinite, rotate 6s linear infinite;
 }
 
 .links-section {
@@ -950,7 +1267,7 @@ body::before {
     padding: 30px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(74, 144, 226, 0.1);
     text-decoration: none;
     color: inherit;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -966,7 +1283,8 @@ body::before {
     right: 0;
     height: 3px;
     background: linear-gradient(90deg, #4a90e2, #50c878);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: borderShimmer 3s ease-in-out infinite;
 }
 
 .link-card::after {
@@ -978,8 +1296,17 @@ body::before {
     bottom: 0;
     background: radial-gradient(circle at center, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
+}
+
+@keyframes borderShimmer {
+    0%, 100% {
+        background-position: -200% 0;
+    }
+    50% {
+        background-position: 200% 0;
+    }
 }
 
 .link-card:hover::after {
@@ -988,15 +1315,25 @@ body::before {
 
 .link-card.boost::before {
     background: linear-gradient(90deg, #ff6b6b, #ffd93d);
+    animation-duration: 2s;
 }
 
 .link-card.advertising::before {
     background: linear-gradient(90deg, #50c878, #4a90e2);
+    animation-duration: 4s;
 }
 
 .link-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(74, 144, 226, 0.2);
+}
+
+.link-card.boost:hover {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 107, 107, 0.2);
+}
+
+.link-card.advertising:hover {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(80, 200, 120, 0.2);
 }
 
 .link-card:nth-child(1) {
@@ -1014,8 +1351,17 @@ body::before {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: float 3s ease-in-out infinite, bounce 2s infinite;
+    animation: float 3s ease-in-out infinite, bounce 2s infinite, iconSpin 8s linear infinite;
     filter: drop-shadow(0 4px 8px rgba(74, 144, 226, 0.3));
+}
+
+@keyframes iconSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .link-card.boost i {
@@ -1052,14 +1398,26 @@ body::before {
     background: linear-gradient(45deg, #4a90e2, #50c878);
     transform: translateX(-50%);
     border-radius: 1px;
+    animation: underlineFlow 3s ease-in-out infinite;
+}
+
+@keyframes underlineFlow {
+    0%, 100% {
+        width: 40px;
+    }
+    50% {
+        width: 80px;
+    }
 }
 
 .link-card.boost h3::after {
     background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    animation-duration: 2s;
 }
 
 .link-card.advertising h3::after {
     background: linear-gradient(45deg, #50c878, #4a90e2);
+    animation-duration: 4s;
 }
 
 .link-card p {
@@ -1100,7 +1458,35 @@ body::before {
     bottom: 0;
     background: linear-gradient(45deg, rgba(74, 144, 226, 0.1), rgba(80, 200, 120, 0.1));
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-item::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: shineEffect 4s ease-in-out infinite;
+}
+
+@keyframes shineEffect {
+    0% {
+        transform: rotate(45deg) translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(45deg) translateX(100%);
+        opacity: 0;
+    }
 }
 
 .feature-item:hover::before {
@@ -1110,6 +1496,10 @@ body::before {
 .feature-item:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-5px) scale(1.05);
+}
+
+.feature-item:hover::after {
+    opacity: 1;
 }
 
 .feature-item:nth-child(1):hover {
@@ -1155,7 +1545,7 @@ body::before {
     font-size: 2rem;
     margin-bottom: 15px;
     color: #4a90e2;
-    animation: bounce 2s infinite;
+    animation: bounce 2s infinite, float 4s ease-in-out infinite;
     position: relative;
     z-index: 1;
     filter: drop-shadow(0 4px 8px rgba(74, 144, 226, 0.3));
@@ -1197,6 +1587,18 @@ body::before {
     background: linear-gradient(45deg, #4a90e2, #50c878);
     transform: translateX(-50%);
     border-radius: 1px;
+    animation: featureUnderline 3s ease-in-out infinite;
+}
+
+@keyframes featureUnderline {
+    0%, 100% {
+        width: 30px;
+        opacity: 0.7;
+    }
+    50% {
+        width: 60px;
+        opacity: 1;
+    }
 }
 
 .feature-item:nth-child(1) h4::after {
@@ -1205,10 +1607,12 @@ body::before {
 
 .feature-item:nth-child(2) h4::after {
     background: linear-gradient(45deg, #50c878, #ff6b6b);
+    animation-duration: 4s;
 }
 
 .feature-item:nth-child(3) h4::after {
     background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    animation-duration: 5s;
 }
 
 .feature-item p {
@@ -1238,6 +1642,7 @@ body::before {
     height: 2px;
     background: linear-gradient(90deg, #4a90e2, #50c878);
     transform: translateX(-50%);
+    animation: footerLine 3s ease-in-out infinite;
 }
 
 .footer::after {
@@ -1250,6 +1655,46 @@ body::before {
     background: #50c878;
     transform: translateX(-50%) rotate(45deg);
     border-radius: 2px;
+    animation: footerDot 2s ease-in-out infinite;
+}
+
+@keyframes footerLine {
+    0%, 100% {
+        width: 100px;
+        opacity: 0.7;
+    }
+    50% {
+        width: 150px;
+        opacity: 1;
+    }
+}
+
+@keyframes footerDot {
+    0%, 100% {
+        transform: translateX(-50%) rotate(45deg) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateX(-50%) rotate(45deg) scale(1.3);
+        opacity: 1;
+    }
+}
+
+.credits {
+    margin-top: 20px;
+    opacity: 0.8;
+    font-size: 0.7rem;
+    color: #888;
+}
+
+.credits p {
+    animation: fadeIn 2s ease-out 2s both;
+}
+
+.credits p:hover {
+    opacity: 1;
+    color: #aaa;
+    transition: all 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -1886,6 +2331,73 @@ body::before {
     }
 }
 
+@media (max-width: 1800px) {
+    .container {
+        max-width: 1400px;
+        padding: 25px;
+    }
+    
+    .logo h1 {
+        font-size: 4rem;
+    }
+    
+    .logo i {
+        font-size: 3.5rem;
+    }
+    
+    .tagline {
+        font-size: 1.5rem;
+    }
+    
+    .circle-4 {
+        display: block;
+    }
+    
+    .circle-5 {
+        display: block;
+    }
+    
+    .circle-6 {
+        display: block;
+    }
+    
+    .circle-7 {
+        display: block;
+    }
+    
+    .circle-8 {
+        display: block;
+    }
+    
+    .circle-9 {
+        display: block;
+    }
+    
+    .circle-10 {
+        display: block;
+    }
+    
+    .circle-11 {
+        display: block;
+    }
+    
+    .circle-12 {
+        display: block;
+    }
+    
+    .circle-13 {
+        display: block;
+    }
+    
+    .circle-14 {
+        display: block;
+    }
+    
+    .circle-15 {
+        display: block;
+    }
+}
+
 @media (max-width: 1600px) {
     .container {
         max-width: 1300px;
@@ -1931,6 +2443,26 @@ body::before {
     .circle-10 {
         display: block;
     }
+    
+    .circle-11 {
+        display: block;
+    }
+    
+    .circle-12 {
+        display: block;
+    }
+    
+    .circle-13 {
+        display: block;
+    }
+    
+    .circle-14 {
+        display: block;
+    }
+    
+    .circle-15 {
+        display: block;
+    }
 }
 
 @media (max-width: 1400px) {
@@ -1972,6 +2504,26 @@ body::before {
     }
     
     .circle-10 {
+        display: block;
+    }
+    
+    .circle-11 {
+        display: block;
+    }
+    
+    .circle-12 {
+        display: block;
+    }
+    
+    .circle-13 {
+        display: none;
+    }
+    
+    .circle-14 {
+        display: block;
+    }
+    
+    .circle-15 {
         display: block;
     }
 }
@@ -2030,6 +2582,36 @@ body::before {
         display: block;
         width: 75px;
         height: 75px;
+    }
+    
+    .circle-11 {
+        display: block;
+        width: 120px;
+        height: 120px;
+    }
+    
+    .circle-12 {
+        display: block;
+        width: 95px;
+        height: 95px;
+    }
+    
+    .circle-13 {
+        display: block;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .circle-14 {
+        display: block;
+        width: 150px;
+        height: 150px;
+    }
+    
+    .circle-15 {
+        display: block;
+        width: 70px;
+        height: 70px;
     }
 }
 
@@ -2104,6 +2686,36 @@ body::before {
         display: block;
         width: 65px;
         height: 65px;
+    }
+    
+    .circle-11 {
+        display: block;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .circle-12 {
+        display: block;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .circle-13 {
+        display: block;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .circle-14 {
+        display: block;
+        width: 130px;
+        height: 130px;
+    }
+    
+    .circle-15 {
+        display: block;
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -2222,6 +2834,10 @@ body::before {
         font-size: 0.8rem;
     }
     
+    .credits {
+        font-size: 0.6rem;
+    }
+    
     .circle-4 {
         width: 160px;
         height: 160px;
@@ -2258,6 +2874,36 @@ body::before {
         display: block;
         width: 55px;
         height: 55px;
+    }
+    
+    .circle-11 {
+        display: block;
+        width: 85px;
+        height: 85px;
+    }
+    
+    .circle-12 {
+        display: block;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .circle-13 {
+        display: block;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .circle-14 {
+        display: block;
+        width: 110px;
+        height: 110px;
+    }
+    
+    .circle-15 {
+        display: block;
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -2358,6 +3004,10 @@ body::before {
         font-size: 0.75rem;
     }
     
+    .credits {
+        font-size: 0.55rem;
+    }
+    
     .circle-4 {
         width: 140px;
         height: 140px;
@@ -2394,6 +3044,36 @@ body::before {
         display: block;
         width: 45px;
         height: 45px;
+    }
+    
+    .circle-11 {
+        display: block;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .circle-12 {
+        display: block;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .circle-13 {
+        display: block;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .circle-14 {
+        display: block;
+        width: 90px;
+        height: 90px;
+    }
+    
+    .circle-15 {
+        display: block;
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -2488,6 +3168,10 @@ body::before {
         font-size: 0.7rem;
     }
     
+    .credits {
+        font-size: 0.5rem;
+    }
+    
     .circle-4 {
         width: 120px;
         height: 120px;
@@ -2524,6 +3208,36 @@ body::before {
         display: block;
         width: 35px;
         height: 35px;
+    }
+    
+    .circle-11 {
+        display: block;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .circle-12 {
+        display: block;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .circle-13 {
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .circle-14 {
+        display: block;
+        width: 75px;
+        height: 75px;
+    }
+    
+    .circle-15 {
+        display: block;
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -2625,6 +3339,10 @@ body::before {
         font-size: 0.65rem;
     }
     
+    .credits {
+        font-size: 0.45rem;
+    }
+    
     .circle-4 {
         width: 100px;
         height: 100px;
@@ -2661,6 +3379,36 @@ body::before {
         display: block;
         width: 25px;
         height: 25px;
+    }
+    
+    .circle-11 {
+        display: block;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .circle-12 {
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .circle-13 {
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .circle-14 {
+        display: block;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .circle-15 {
+        display: block;
+        width: 20px;
+        height: 20px;
     }
 }
 
@@ -2746,6 +3494,10 @@ body::before {
         font-size: 0.6rem;
     }
     
+    .credits {
+        font-size: 0.4rem;
+    }
+    
     .circle-4 {
         width: 80px;
         height: 80px;
@@ -2782,6 +3534,36 @@ body::before {
         display: block;
         width: 20px;
         height: 20px;
+    }
+    
+    .circle-11 {
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .circle-12 {
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .circle-13 {
+        display: block;
+        width: 25px;
+        height: 25px;
+    }
+    
+    .circle-14 {
+        display: block;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .circle-15 {
+        display: block;
+        width: 15px;
+        height: 15px;
     }
 }
 
@@ -2831,6 +3613,54 @@ body::before {
     }
     
     .floating-circle {
+        display: block !important;
+    }
+    
+    .circle-4 {
+        display: block !important;
+    }
+    
+    .circle-5 {
+        display: block !important;
+    }
+    
+    .circle-6 {
+        display: block !important;
+    }
+    
+    .circle-7 {
+        display: block !important;
+    }
+    
+    .circle-8 {
+        display: block !important;
+    }
+    
+    .circle-9 {
+        display: block !important;
+    }
+    
+    .circle-10 {
+        display: block !important;
+    }
+    
+    .circle-11 {
+        display: block !important;
+    }
+    
+    .circle-12 {
+        display: block !important;
+    }
+    
+    .circle-13 {
+        display: block !important;
+    }
+    
+    .circle-14 {
+        display: block !important;
+    }
+    
+    .circle-15 {
         display: block !important;
     }
 }
@@ -2910,11 +3740,37 @@ body::before {
         animation: none !important;
     }
     
+    body::after {
+        animation: none !important;
+    }
+    
     .logo i {
         animation: none !important;
     }
     
     .logo h1 {
+        animation: none !important;
+    }
+    
+    .container::before {
+        animation: none !important;
+    }
+    
+    .circle-1,
+    .circle-2,
+    .circle-3,
+    .circle-4,
+    .circle-5,
+    .circle-6,
+    .circle-7,
+    .circle-8,
+    .circle-9,
+    .circle-10,
+    .circle-11,
+    .circle-12,
+    .circle-13,
+    .circle-14,
+    .circle-15 {
         animation: none !important;
     }
 }
@@ -3052,7 +3908,8 @@ body::before {
     .language-switcher,
     .channel-link,
     .background-effects,
-    body::before {
+    body::before,
+    body::after {
         display: none;
     }
     
@@ -3072,6 +3929,24 @@ body::before {
     }
     
     .floating-circle {
+        display: none;
+    }
+    
+    .circle-1,
+    .circle-2,
+    .circle-3,
+    .circle-4,
+    .circle-5,
+    .circle-6,
+    .circle-7,
+    .circle-8,
+    .circle-9,
+    .circle-10,
+    .circle-11,
+    .circle-12,
+    .circle-13,
+    .circle-14,
+    .circle-15 {
         display: none;
     }
 }
@@ -3242,6 +4117,24 @@ body::before {
     .background-effects {
         display: none;
     }
+    
+    .circle-1,
+    .circle-2,
+    .circle-3,
+    .circle-4,
+    .circle-5,
+    .circle-6,
+    .circle-7,
+    .circle-8,
+    .circle-9,
+    .circle-10,
+    .circle-11,
+    .circle-12,
+    .circle-13,
+    .circle-14,
+    .circle-15 {
+        display: none;
+    }
 }
 
 @media (orientation: portrait) and (min-width: 768px) {
@@ -3343,5 +4236,129 @@ body::before {
 @media (max-resolution: 96dpi) {
     .floating-circle {
         opacity: 0.3;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .floating-circle {
+        opacity: 0.6;
+    }
+}
+
+@media (max-aspect-ratio: 4/3) {
+    .floating-circle {
+        opacity: 0.4;
+    }
+}
+
+@media (pointer: fine) {
+    .telegram-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+    }
+    
+    .link-card:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+    
+    .member-card:hover {
+        transform: translateY(-10px) scale(1.02);
+    }
+    
+    .feature-item:hover {
+        transform: translateY(-5px) scale(1.05);
+    }
+    
+    .channel-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+    }
+    
+    .language-option:hover {
+        transform: translateY(-2px);
+    }
+}
+
+@media (pointer: coarse) {
+    .telegram-btn:active,
+    .link-card:active,
+    .member-card:active,
+    .feature-item:active,
+    .channel-btn:active {
+        transform: scale(0.98);
+    }
+}
+
+@media (any-hover: hover) {
+    .telegram-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+    }
+    
+    .link-card:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+    
+    .member-card:hover {
+        transform: translateY(-10px) scale(1.02);
+    }
+    
+    .feature-item:hover {
+        transform: translateY(-5px) scale(1.05);
+    }
+    
+    .channel-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+    }
+    
+    .language-option:hover {
+        transform: translateY(-2px);
+    }
+}
+
+@media (any-hover: none) {
+    .telegram-btn:active,
+    .link-card:active,
+    .member-card:active,
+    .feature-item:active,
+    .channel-btn:active {
+        transform: scale(0.98);
+    }
+}
+
+@media (prefers-contrast: normal) {
+    .member-card,
+    .link-card,
+    .feature-item,
+    .info-card {
+        border-width: 1px;
+    }
+}
+
+@media (prefers-contrast: more) {
+    .member-card,
+    .link-card,
+    .feature-item,
+    .info-card {
+        border-width: 3px;
+        border-color: #ffffff;
+    }
+    
+    .telegram-btn,
+    .channel-btn {
+        border: 3px solid #ffffff;
+    }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+    .info-card,
+    .member-card,
+    .link-card,
+    .feature-item,
+    .language-toggle,
+    .channel-btn {
+        backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.9);
+    }
+    
+    body {
+        background: #0c0c0c;
     }
 }
